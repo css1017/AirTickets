@@ -1,13 +1,13 @@
-package com.css101.airtickets.ui.home
+package com.css101.airtickets.ui.tickets
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class TicketsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is tickets Fragment"
     }
     val text: LiveData<String> = _text
 }

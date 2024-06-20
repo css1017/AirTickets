@@ -1,0 +1,10 @@
+<resources>
+    <attr name="bg" format="color" />
+    <attr name="accent" format="color" />
+    <attr name="bg_element_1" format="color" />
+    <attr name="bg_element_2" format="color" />
+    <attr name="bg_element_3" format="color" />
+    <attr name="text" format="color" />
+    <attr name="text_accent" format="color" />
+
+</resources>

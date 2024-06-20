@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/bg_element"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/btnBackCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:contentDescription="@string/back_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <LinearLayout
+        android:id="@+id/llFrom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBackCountry"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvFromCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:maxLines="1"
+            android:text="@string/moscow"
+            android:textColor="?attr/text"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/spacerCountrySearch1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnSwapCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:contentDescription="@string/swap_button"
+            app:srcCompat="@drawable/ic_swap" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWhere"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBackCountry"
+        app:layout_constraintTop_toBottomOf="@+id/llFrom">
+
+        <TextView
+            android:id="@+id/tvToCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:maxLines="1"
+            android:text="@string/moscow"
+            android:textColor="?attr/text"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/spacerCountrySearch2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnClearCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:contentDescription="@string/clear_button"
+            app:srcCompat="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separatorCountry"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/bg_element_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBackCountry"
+        app:layout_constraintTop_toBottomOf="@+id/llFrom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

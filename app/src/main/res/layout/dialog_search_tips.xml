@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+    <TextView
+        android:id="@+id/tvComplicated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/sf_pro_regular"
+        android:gravity="center"
+        android:text="@string/complicated"
+        android:textColor="?attr/text"
+        android:textSize="14sp"
+        app:drawableTopCompat="@drawable/ic_search_complicated" />
+
+    <TextView
+        android:id="@+id/tvWherever"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/sf_pro_regular"
+        android:gravity="center"
+        android:text="@string/wherever"
+        android:textColor="?attr/text"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:drawableTopCompat="@drawable/ic_search_wherever" />
+
+    <TextView
+        android:id="@+id/tvWeekends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/sf_pro_regular"
+        android:gravity="center"
+        android:text="@string/weekends"
+        android:textColor="?attr/text"
+        android:textSize="14sp"
+        app:drawableTopCompat="@drawable/ic_search_weekends" />
+
+    <TextView
+        android:id="@+id/tvHot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/sf_pro_regular"
+        android:gravity="center"
+        android:text="@string/hot_tickets"
+        android:textColor="?attr/text"
+        android:textSize="14sp"
+        app:drawableTopCompat="@drawable/ic_search_hot" />
+</LinearLayout>

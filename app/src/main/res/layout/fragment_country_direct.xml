@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/bg_element"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitleDirect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/sf_pro_semibold"
+        android:text="@string/direct_flights"
+        android:textAlignment="viewStart"
+        android:textColor="?attr/text"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCompanyNameDirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivDirect1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Уральские авиалинии" />
+
+        <TextView
+            android:id="@+id/tvPriceDirect1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_regular_italic"
+            android:maxLines="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="14sp"
+            app:drawableEndCompat="@drawable/ic_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 000" />
+
+        <TextView
+            android:id="@+id/tvTimeDirect1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            tools:text="07:00  09:10   10:00  11:00  12:00  13:00  11:00  12:00  13:00  "
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPriceDirect1"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyNameDirect"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyNameDirect" />
+
+        <ImageView
+            android:id="@+id/ivDirect1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/flight_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_company_1" />
+
+        <View
+            android:id="@+id/separatorDirect1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/bg_element_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeDirect1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCompanyNameDirect2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivDirect2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Уральские авиалинии" />
+
+        <TextView
+            android:id="@+id/tvPriceDirect2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_regular_italic"
+            android:maxLines="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="14sp"
+            app:drawableEndCompat="@drawable/ic_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 000" />
+
+        <TextView
+            android:id="@+id/tvTimeDirect2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            tools:text="07:00  09:10   10:00  11:00  12:00  13:00  11:00  12:00  13:00  "
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPriceDirect2"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyNameDirect2"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyNameDirect2" />
+
+        <ImageView
+            android:id="@+id/ivDirect2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/flight_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_company_2" />
+
+        <View
+            android:id="@+id/separatorDirect2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/bg_element_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeDirect2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCompanyNameDirect3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivDirect3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Уральские авиалинии" />
+
+        <TextView
+            android:id="@+id/tvPriceDirect3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_regular_italic"
+            android:maxLines="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="14sp"
+            app:drawableEndCompat="@drawable/ic_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 000" />
+
+        <TextView
+            android:id="@+id/tvTimeDirect3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_regular"
+            android:maxLines="1"
+            tools:text="07:00  09:10   10:00  11:00  12:00  13:00  11:00  12:00  13:00  "
+            android:textColor="?attr/text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPriceDirect3"
+            app:layout_constraintStart_toStartOf="@+id/tvCompanyNameDirect3"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyNameDirect3" />
+
+        <ImageView
+            android:id="@+id/ivDirect3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/flight_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_company_3" />
+
+        <View
+            android:id="@+id/separatorDirect3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/bg_element_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeDirect3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnShowAllTickets"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:backgroundTint="?attr/bg_element_1"
+        android:fontFamily="@font/sf_pro_semibold"
+        android:text="@string/show_all"
+        android:textAllCaps="false"
+        android:textColor="?attr/text"
+        android:textSize="16sp"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>
