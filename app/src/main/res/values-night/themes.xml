@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AirTickets" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.AirTickets" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimary">@color/accent_dark</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
@@ -10,7 +10,15 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
         <!-- Customize your theme here. -->
+        <item name="text">@color/text_dark</item>
+        <item name="bg">@color/bg_dark</item>
+        <item name="accent">@color/bg_accent_dark</item>
+        <item name="bg_element_1">@color/bg_grey_1_dark</item>
+        <item name="bg_element_2">@color/bg_grey_2_dark</item>
+        <item name="bg_element_3">@color/bg_grey_3_dark</item>
+        <item name="text_accent">@color/text_accent_dark</item>
+
     </style>
 </resources>

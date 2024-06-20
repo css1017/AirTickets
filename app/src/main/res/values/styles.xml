@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/BottomNavigationViewTextAppearanceActive</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationViewTextAppearanceInactive
+        </item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearanceActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:font">@font/sf_pro_regular</item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearanceInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:font">@font/sf_pro_regular</item>
+
+    </style>
+
+</resources>

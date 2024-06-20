@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bg"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.tickets.TicketsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTickets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/main_title"
+            android:textAlignment="center"
+            android:textColor="?attr/text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/inclSearchTickets"
+            layout="@layout/fragment_tickets_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/tvTitleMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/title_music"
+            android:textAlignment="viewStart"
+            android:textColor="?attr/text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMusic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_music"/>
+
+        <Button
+            android:id="@+id/btnShowAllPlaces"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="?attr/bg_element_1"
+            android:fontFamily="@font/sf_pro_semibold_italic"
+            android:text="@string/show_all_places"
+            android:textAllCaps="false"
+            android:textColor="?attr/text"
+            android:textSize="16sp"
+            app:cornerRadius="8dp" />
+
+        <TextView
+            android:id="@+id/tvTitleFirstTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/your_first_time"
+            android:textAlignment="viewStart"
+            android:textColor="?attr/bg_element_2"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
