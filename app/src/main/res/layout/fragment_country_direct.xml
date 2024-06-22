@@ -233,7 +233,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btnShowAllTickets"
+        android:id="@+id/btnShowAllDirectTickets"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:backgroundTint="?attr/bg_element_1"

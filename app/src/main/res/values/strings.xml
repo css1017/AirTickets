@@ -46,4 +46,5 @@
     <string name="logo">logo</string>
     <string name="from_hint">Откуда - Москва</string>
     <string name="price">%1$s ₽</string>
+    <string name="from1">Откуда - Москва</string>
 </resources>
