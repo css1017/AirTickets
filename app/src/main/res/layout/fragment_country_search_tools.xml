@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="?attr/bg"
     android:scrollbars="none"
-    tools:context=".ui.tickets.TicketsFragment">
+    tools:context=".presentation.ui.tickets.TicketsFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"

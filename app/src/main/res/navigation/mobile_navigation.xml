@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_tickets"
-        android:name="com.css101.airtickets.ui.tickets.TicketsFragment"
+        android:name="com.css101.airtickets.presentation.ui.tickets.TicketsFragment"
         android:label="@string/tickets"
         tools:layout="@layout/fragment_tickets" />
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="com.css101.airtickets.ui.hotels.HotelsFragment"
+        android:name="com.css101.airtickets.presentation.ui.hotels.HotelsFragment"
         android:label="@string/hotels"
         tools:layout="@layout/fragment_hotels" />
     <fragment
         android:id="@+id/navigation_shorter"
-        android:name="com.css101.airtickets.ui.shorter.ShorterFragment"
+        android:name="com.css101.airtickets.presentation.ui.shorter.ShorterFragment"
         android:label="@string/shorter"
         tools:layout="@layout/fragment_shorter" />
     <fragment
         android:id="@+id/navigation_subscriptions"
-        android:name="com.css101.airtickets.ui.subscriptions.SubscriptionsFragment"
+        android:name="com.css101.airtickets.presentation.ui.subscriptions.SubscriptionsFragment"
         android:label="@string/subscriptions"
         tools:layout="@layout/fragment_subscriptions" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.css101.airtickets.ui.profile.ProfileFragment"
+        android:name="com.css101.airtickets.presentation.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -44,4 +44,6 @@
     <string name="search">search</string>
     <string name="music_cover">music cover</string>
     <string name="logo">logo</string>
+    <string name="from_hint">Откуда - Москва</string>
+    <string name="price">%1$s ₽</string>
 </resources>
