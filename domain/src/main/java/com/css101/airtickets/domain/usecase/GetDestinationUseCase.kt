@@ -1,7 +1,7 @@
 package com.css101.airtickets.domain.usecase
 
-class GetDepartureUseCase {
+class GetDestinationUseCase {
     fun execute(): String {
-        return "Москва"
+        return "Сочи"
     }
 }

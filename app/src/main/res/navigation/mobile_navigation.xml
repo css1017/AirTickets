@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_tickets">
+    app:startDestination="@id/navigation_tickets">
+    <include app:graph="@navigation/tickets_navigation" />
 
     <fragment
         android:id="@+id/navigation_tickets"
         android:name="com.css101.airtickets.presentation.ui.tickets.TicketsFragment"
         android:label="@string/tickets"
-        tools:layout="@layout/fragment_tickets" />
+        tools:layout="@layout/fragment_tickets">
+        <action
+            android:id="@+id/action_search_to_search_country"
+            app:destination="@id/tickets_navigation" />
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_hotels"
         android:name="com.css101.airtickets.presentation.ui.hotels.HotelsFragment"
@@ -30,4 +36,5 @@
         android:name="com.css101.airtickets.presentation.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+
 </navigation>

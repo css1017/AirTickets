@@ -19,5 +19,8 @@
         <item name="bg_element_2">@color/bg_grey_2_light</item>
         <item name="bg_element_3">@color/bg_grey_3_light</item>
         <item name="text_accent">@color/text_accent_light</item>
+
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+
     </style>
 </resources>

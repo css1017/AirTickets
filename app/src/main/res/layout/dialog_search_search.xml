@@ -20,7 +20,7 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:maxLines="1"
-        android:text="@string/moscow"
+        android:hint="@string/from1"
         android:textColor="?attr/text"
         android:textSize="16sp"
         app:drawableStartCompat="@drawable/ic_search_plane" />
@@ -36,7 +36,7 @@
         android:background="?attr/bg_element_3" />
 
     <EditText
-        android:id="@+id/tvWhere"
+        android:id="@+id/etWhere"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
