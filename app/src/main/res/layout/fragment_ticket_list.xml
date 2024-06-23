@@ -36,10 +36,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/sf_pro_semibold"
-            tools:text="Москва - Сочи"
             android:textColor="?attr/text"
             app:layout_constraintStart_toEndOf="@+id/btnBackCountry"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Москва - Сочи" />
 
         <TextView
             android:id="@+id/tvInfoList"
@@ -48,11 +48,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/sf_pro_regular"
-            tools:text="23 февраля, 1 пассажир"
             android:textColor="?attr/text_accent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnBackCountry"
-            app:layout_constraintTop_toBottomOf="@+id/tvDirectionList" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDirectionList"
+            tools:text="23 февраля, 1 пассажир" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -64,11 +64,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
+        android:paddingBottom="100dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:itemCount="4"
+        tools:itemCount="15"
         tools:listitem="@layout/item_ticket_list" />
 
     <LinearLayout

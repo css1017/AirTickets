@@ -29,14 +29,17 @@ val appModule = module {
             getDepartureUseCase = get(),
             getDirectFlightsUseCase = get(),
             saveDestinationUseCase = get(),
-            saveDepartureUseCase = get()
+            saveDepartureUseCase = get(),
+            saveDateUseCase = get(),
+            getDateUseCase = get()
         )
     }
     viewModel {
         SearchTicketListViewModel(
             getTicketListUseCase = get(),
             getDepartureUseCase = get(),
-            getDestinationUseCase = get()
+            getDestinationUseCase = get(),
+            getDateUseCase = get()
         )
     }
 }

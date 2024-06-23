@@ -17,7 +17,7 @@
     <string name="show_all_places">Показать все места</string>
     <string name="your_first_time">Ваш первый раз</string>
     <string name="moscow">Москва</string>
-    <string name="where1">Куда - Тбилиси</string>
+    <string name="where1">Куда - Турция</string>
     <string name="complicated">Сложный маршрут</string>
     <string name="wherever">Куда угодно</string>
     <string name="weekends">Выходные</string>
@@ -49,8 +49,11 @@
     <string name="from1">Откуда - Москва</string>
     <string name="no_transfer">/Без пересадок</string>
     <string name="in_flight_time">%1$sч в пути</string>
-    <string name="ticket_info">%1$s/%2$s</string>
-    <string name="depatrure_format">%1$s — </string>
+    <string name="ticket_info">%1$s%2$s</string>
+    <string name="depatrure_format">%1$s – </string>
     <string name="difficult">Сложный маршрут</string>
     <string name="departure_arrival">%1$s – %2$s</string>
+    <string name="info_list">%1$s, 1 пассажир</string>
+    <string name="enter_destination">Введите город назначения</string>
+    <string name="enter_departure">Введите город отправления</string>
 </resources>

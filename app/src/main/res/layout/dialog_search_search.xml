@@ -22,6 +22,7 @@
         android:maxLines="1"
         android:hint="@string/from1"
         android:textColor="?attr/text"
+        android:textColorHint="?attr/text_accent"
         android:textSize="16sp"
         app:drawableStartCompat="@drawable/ic_search_plane" />
 

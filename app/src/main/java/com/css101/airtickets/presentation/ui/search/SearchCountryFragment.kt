@@ -1,5 +1,7 @@
 package com.css101.airtickets.presentation.ui.search
 
+import android.app.DatePickerDialog
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import com.css101.airtickets.R
 import com.css101.airtickets.databinding.FragmentCountryBinding
 import com.css101.airtickets.domain.models.Flight
 import com.css101.airtickets.utils.formatPrice
+import com.css101.airtickets.utils.formatShort
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchCountryFragment : Fragment() {
@@ -35,6 +38,7 @@ class SearchCountryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
         setupSearch()
+        setupSearchTools()
         btnShowAllTickets.setOnClickListener {
             navController.navigate(R.id.action_search_country_to_ticket_list)
         }
@@ -55,6 +59,46 @@ class SearchCountryFragment : Fragment() {
         tvCompanyNameDirect3.text = directData[2].title
     }
 
+    private fun setupSearchTools() = with(binding.inclSearchToolsCountry) {
+        vm.date.observe(viewLifecycleOwner) {
+            btnDateCountry.text = it.formatShort()
+        }
+        btnDateCountry.setOnClickListener {
+            showFlightDatePickerDialog()
+        }
+        btnReturnCountry.setOnClickListener {
+            showReturnDatePickerDialog()
+        }
+    }
+
+    private fun showFlightDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, year, month, dayOfMonth ->
+                val selectedCalendar = Calendar.getInstance()
+                selectedCalendar.set(year, month, dayOfMonth)
+                vm.saveDate(selectedCalendar.time)
+                binding.inclSearchToolsCountry.btnDateCountry.text =
+                    selectedCalendar.time.formatShort()
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
+    }
+    private fun showReturnDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, _, _, _ -> },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
+    }
     private fun setupSearch() = with(binding.inclSearchCountry) {
         tvFromCountry.text = vm.departure.value
         tvToCountry.text = vm.destination.value
@@ -69,7 +113,7 @@ class SearchCountryFragment : Fragment() {
             tvToCountry.text = temp
             vm.getDirectFlights()
         }
-        btnClearCountry.setOnClickListener {//todo
+        btnClearCountry.setOnClickListener {
             vm.setDestination(null)
             navController.popBackStack()
         }
@@ -78,5 +122,10 @@ class SearchCountryFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        vm.updateDate()
     }
 }

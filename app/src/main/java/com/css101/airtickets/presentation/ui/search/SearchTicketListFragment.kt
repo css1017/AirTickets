@@ -11,7 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.css101.airtickets.R
 import com.css101.airtickets.databinding.FragmentTicketListBinding
 import com.css101.airtickets.domain.models.Ticket
+import com.css101.airtickets.utils.formatLong
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.time.LocalDate
+import java.time.ZoneId
+import java.util.Date
 
 class SearchTicketListFragment : Fragment() {
     private var _binding: FragmentTicketListBinding? = null
@@ -41,9 +45,6 @@ class SearchTicketListFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun setAdapter(tickets: List<Ticket>) {
-        if (tickets.isEmpty()) {
-            showEmptyTickets()
-        } else showTickets()
         binding.rvTickets.adapter = SearchTicketListAdapter(tickets) {}
         binding.rvTickets.adapter?.notifyDataSetChanged()
     }
@@ -53,15 +54,15 @@ class SearchTicketListFragment : Fragment() {
         }
         vm.getSearchData()
         tvDirectionList.text = getString(R.string.departure_arrival, vm.departure.value, vm.arrival.value)
-//        tvInfoList.text = vm.date
+        tvInfoList.text = getString(
+            R.string.info_list, vm.date.value?.formatLong() ?: Date.from(
+                LocalDate.now().atStartOfDay(
+                    ZoneId.systemDefault()
+                ).toInstant()
+            ).formatLong()
+        )
     }
-    private fun showEmptyTickets() = with(binding) {
 
-    }
-
-    private fun showTickets() = with(binding) {
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
