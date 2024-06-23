@@ -28,4 +28,14 @@ class SearchTicketListViewModel(
             }
         }
     }
+
+    private val _departute = MutableLiveData<String>()
+    val departute: LiveData<String> = _departute
+    private val _arrival = MutableLiveData<String>()
+    val arrival: LiveData<String> = _arrival
+
+    fun getSearchData(){
+        _departute.value = getDepartureUseCase.execute()
+        _arrival.value = getDestinationUseCase.execute()
+    }
 }

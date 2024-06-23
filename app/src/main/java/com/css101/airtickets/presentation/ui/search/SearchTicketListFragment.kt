@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.css101.airtickets.R
 import com.css101.airtickets.databinding.FragmentTicketListBinding
 import com.css101.airtickets.domain.models.Ticket
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -30,8 +31,9 @@ class SearchTicketListFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
+        setupSearch()
         vm.tickets.observe(viewLifecycleOwner) {
             setAdapter(it)
         }
@@ -45,7 +47,14 @@ class SearchTicketListFragment : Fragment() {
         binding.rvTickets.adapter = SearchTicketListAdapter(tickets) {}
         binding.rvTickets.adapter?.notifyDataSetChanged()
     }
-
+    private fun setupSearch() = with(binding) {
+        btnBackCountry.setOnClickListener {
+            navController.popBackStack()
+        }
+        vm.getSearchData()
+        tvDirectionList.text = getString(R.string.departure_arrival, vm.departute.value, vm.arrival.value)
+//        tvInfoList.text = vm.date
+    }
     private fun showEmptyTickets() = with(binding) {
 
     }

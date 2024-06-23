@@ -61,9 +61,17 @@ class SearchCountryFragment : Fragment() {
         btnBackCountry.setOnClickListener {
             navController.popBackStack()
         }
-        btnSwapCountry.setOnClickListener {  }//todo
+        btnSwapCountry.setOnClickListener {
+            vm.setDeparture(tvToCountry.text as String?)
+            vm.setDestination(tvFromCountry.text as String?)
+            val temp = tvFromCountry.text
+            tvFromCountry.text = tvToCountry.text
+            tvToCountry.text = temp
+            vm.getDirectFlights()
+        }
         btnClearCountry.setOnClickListener {//todo
-
+            vm.setDestination(null)
+            navController.popBackStack()
         }
     }
 

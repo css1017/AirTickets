@@ -2,7 +2,7 @@ package com.css101.airtickets.domain.models
 
 data class Ticket(
     val id: Int,
-    val badge: String,
+    val badge: String?,
     val price: PriceTicket,
     val providerName: String, //provider_name
     val company: String,

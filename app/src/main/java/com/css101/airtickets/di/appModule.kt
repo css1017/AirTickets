@@ -18,14 +18,18 @@ val appModule = module {
         SearchViewModel(
             getDepartureUseCase = get(),
             saveDepartureUseCase = get(),
-            saveDestinationUseCase = get()
+            saveDestinationUseCase = get(),
+            getRandomDestinationUseCase = get(),
+            getDestinationUseCase = get()
         )
     }
     viewModel {
         SearchCountryViewModel(
             getDestinationUseCase = get(),
             getDepartureUseCase = get(),
-            getDirectFlightsUseCase = get()
+            getDirectFlightsUseCase = get(),
+            saveDestinationUseCase = get(),
+            saveDepartureUseCase = get()
         )
     }
     viewModel {

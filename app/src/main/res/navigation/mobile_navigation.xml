@@ -14,8 +14,31 @@
         <action
             android:id="@+id/action_search_to_search_country"
             app:destination="@id/tickets_navigation" />
+        <action
+            android:id="@+id/action_search_to_weekends"
+            app:destination="@id/navigation_weekends" />
+        <action
+            android:id="@+id/action_search_to_hot"
+            app:destination="@id/navigation_hot" />
+        <action
+            android:id="@+id/action_search_to_complicated"
+            app:destination="@id/navigation_complicated" />
     </fragment>
-
+    <fragment
+        android:id="@+id/navigation_complicated"
+        android:name="com.css101.airtickets.presentation.ui.complicated.ComplicatedFragment"
+        android:label="@string/complicated"
+        tools:layout="@layout/fragment_complicated" />
+    <fragment
+        android:id="@+id/navigation_hot"
+        android:name="com.css101.airtickets.presentation.ui.hot.HotFragment"
+        android:label="@string/hot_tickets"
+        tools:layout="@layout/fragment_hot" />
+    <fragment
+        android:id="@+id/navigation_weekends"
+        android:name="com.css101.airtickets.presentation.ui.weekends.WeekendsFragment"
+        android:label="@string/weekends"
+        tools:layout="@layout/fragment_weekends" />
     <fragment
         android:id="@+id/navigation_hotels"
         android:name="com.css101.airtickets.presentation.ui.hotels.HotelsFragment"
