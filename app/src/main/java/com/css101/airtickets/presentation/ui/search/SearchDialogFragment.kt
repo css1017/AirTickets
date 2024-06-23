@@ -87,9 +87,6 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun setupSearch() = with(binding.inclSearchSearch) {
-        vm.destination.observe(viewLifecycleOwner) {
-            etWhere.setText(it)
-        }
         vm.departure.observe(viewLifecycleOwner) {
             if (!it.isNullOrEmpty()) {
                 etFrom.setText(it)
@@ -142,5 +139,15 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
             vm.saveToCity(getString(R.string.istambul))
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!vm.isFirstAppearance){
+            vm.destination.observe(viewLifecycleOwner) {
+                binding.inclSearchSearch.etWhere.setText(it)
+            }
+        }
+        vm.isFirstAppearance = false
     }
 }

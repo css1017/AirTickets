@@ -37,6 +37,12 @@ class TicketsViewModel(
         }
     }
 
+    fun updateDeparture() {
+        viewModelScope.launch(Dispatchers.IO) {
+            _savedDeparture.postValue(getDepartureUseCase.execute())
+        }
+    }
+
     fun getInitData() {
         getDeparture()
         getMusicData()

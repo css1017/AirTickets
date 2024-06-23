@@ -15,16 +15,16 @@ val domainModule = module {
         GetMusicUseCase()
     }
     factory {
-        GetDepartureUseCase()
+        GetDepartureUseCase(get())
     }
     factory {
-        SaveDestinationUseCase()
+        SaveDestinationUseCase(get())
     }
     factory {
-        SaveDepartureUseCase()
+        SaveDepartureUseCase(get())
     }
     factory {
-        GetDestinationUseCase()
+        GetDestinationUseCase(get())
     }
     factory {
         GetDirectFlightsUseCase()
