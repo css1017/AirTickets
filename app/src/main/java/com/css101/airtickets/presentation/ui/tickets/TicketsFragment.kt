@@ -42,7 +42,7 @@ class TicketsFragment : Fragment() {
         }
     }
 
-    private fun setDeparture(departure: String) = with(binding) { //todo fix for light theme
+    private fun setDeparture(departure: String) = with(binding) {
         if (departure.isNotEmpty()) {
             inclSearchTickets.tvFrom.text = departure
             inclSearchTickets.tvFrom.setTextColor(

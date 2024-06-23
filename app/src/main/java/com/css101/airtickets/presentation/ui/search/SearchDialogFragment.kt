@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.css101.airtickets.R
@@ -71,9 +72,7 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
     private fun setupTips() = with(binding.inclTipsSearch) {
         tvWherever.setOnClickListener {
             val destination = vm.getRandomDestination()
-            binding.inclSearchSearch.etWhere.setText(destination)
-            navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity(destination)
+            navigateToSearchCountry(destination)
         }
         tvWeekends.setOnClickListener {
             navController.navigate(R.id.action_search_to_weekends)
@@ -111,40 +110,52 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
             else -> {}
         }
 
-        etWhere.setOnEditorActionListener { _, actionId, _ -> //todo need to check whether fields are empty or not
+        etWhere.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
-                navController.navigate(R.id.action_search_to_search_country)
-                vm.saveToCity(etWhere.text.toString())
+                navigateToSearchCountry()
                 true
-            } else {
-                false
-            }
+            } else false
         }
     }
 
+    private fun navigateToSearchCountry(destination: String? = null) = with(binding.inclSearchSearch) {
+        if (destination != null) {
+            etWhere.setText(destination)
+        }
+        when (true) {
+            etWhere.text.toString().isEmpty() -> {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.enter_destination),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            etFrom.text.toString().isEmpty() -> {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.enter_departure),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            else -> {
+                navController.navigate(R.id.action_search_to_search_country)
+                vm.saveToCity(etWhere.text.toString())
+            }
+        }
+
+    }
+
     private fun setupRecommendations() = with(binding.inclRecommendationsSearch) {
-        clPhuket.setOnClickListener {
-            binding.inclSearchSearch.etWhere.setText(getString(R.string.phuket))
-            navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity(getString(R.string.phuket))
-        }
-        clSochi.setOnClickListener {
-            binding.inclSearchSearch.etWhere.setText(getString(R.string.sochi))
-            navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity(getString(R.string.sochi))
-
-        }
-        clIstanbul.setOnClickListener {
-            binding.inclSearchSearch.etWhere.setText(getString(R.string.istambul))
-            navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity(getString(R.string.istambul))
-
-        }
+        clPhuket.setOnClickListener { navigateToSearchCountry(getString(R.string.phuket)) }
+        clSochi.setOnClickListener { navigateToSearchCountry(getString(R.string.sochi)) }
+        clIstanbul.setOnClickListener { navigateToSearchCountry(getString(R.string.istambul)) }
     }
 
     override fun onResume() {
         super.onResume()
-        if (!vm.isFirstAppearance){
+        if (!vm.isFirstAppearance) {
             vm.destination.observe(viewLifecycleOwner) {
                 binding.inclSearchSearch.etWhere.setText(it)
             }

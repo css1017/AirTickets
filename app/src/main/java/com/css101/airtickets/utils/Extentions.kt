@@ -3,6 +3,9 @@ package com.css101.airtickets.utils
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 fun Int.formatPrice(): String {
     val priceString = this.toString()
@@ -18,4 +21,13 @@ fun View.showKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
     }, 300)
+}
+
+fun Date.formatShort(): String {
+    val dateFormat = SimpleDateFormat("dd MMM, EEE", Locale("ru"))
+    return dateFormat.format(this)
+}
+fun Date.formatLong(): String {
+    val dateFormat = SimpleDateFormat("dd MMMM", Locale("ru"))
+    return dateFormat.format(this)
 }

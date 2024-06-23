@@ -33,51 +33,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:fontFamily="@font/sf_pro_semibold"
-            tools:text="17:45 — "
+            android:fontFamily="@font/sf_pro_semibold_italic"
             android:textColor="?attr/text"
             app:layout_constraintStart_toEndOf="@+id/ivLogoItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItem" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceItem"
+            tools:text="17:45 —" />
 
         <TextView
             android:id="@+id/tvArrivalItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_semibold"
-            tools:text="21:20"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/sf_pro_semibold_italic"
             android:textColor="?attr/text"
             app:layout_constraintStart_toEndOf="@+id/tvDepartureItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItem" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceItem"
+            tools:text="21:20" />
 
         <TextView
             android:id="@+id/tvDeparturePortItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:fontFamily="@font/sf_pro_regular"
-            tools:text="BUS"
+            android:fontFamily="@font/sf_pro_regular_italic"
             android:textColor="?attr/text_accent"
             app:layout_constraintStart_toEndOf="@+id/ivLogoItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvDepartureItem" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDepartureItem"
+            tools:text="BUS" />
 
         <TextView
             android:id="@+id/tvArrivalPortItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
             android:layout_marginBottom="16dp"
-            android:fontFamily="@font/sf_pro_regular"
-            tools:text="VKO"
+            android:fontFamily="@font/sf_pro_regular_italic"
             android:textColor="?attr/text_accent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvDepartureItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvArrivalItem" />
+            app:layout_constraintTop_toBottomOf="@+id/tvArrivalItem"
+            tools:text="VKO" />
 
         <TextView
             android:id="@+id/tvInfoItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/sf_pro_semibold"
+            android:fontFamily="@font/sf_pro_regular"
             android:textColor="?attr/text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tvArrivalItem"

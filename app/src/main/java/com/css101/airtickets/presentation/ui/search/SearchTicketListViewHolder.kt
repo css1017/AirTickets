@@ -1,5 +1,6 @@
 package com.css101.airtickets.presentation.ui.search
 
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.css101.airtickets.R
@@ -44,6 +45,7 @@ class SearchTicketListViewHolder(private val binding: ItemTicketListBinding) :
         return ctx.getString(R.string.in_flight_time, flightTime)
     }
 
+    @SuppressLint("DefaultLocale")
     private fun calculateFlightTime(
         departureDateString: String,
         arrivalDateString: String
