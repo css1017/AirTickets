@@ -3,6 +3,8 @@ package com.css101.airtickets.presentation.ui.search
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,19 +58,50 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
                 ViewGroup.LayoutParams.MATCH_PARENT
             )
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
+        vm.initSearch()
         setupSearch()
+        setupTips()
         setupRecommendations()
     }
 
+    private fun setupTips() = with(binding.inclTipsSearch) {
+        tvWherever.setOnClickListener {
+            val destination = vm.getRandomDestination()
+            binding.inclSearchSearch.etWhere.setText(destination)
+            navController.navigate(R.id.action_search_to_search_country)
+            vm.saveToCity(destination)
+        }
+        tvWeekends.setOnClickListener {
+            navController.navigate(R.id.action_search_to_weekends)
+        }
+        tvComplicated.setOnClickListener {
+            navController.navigate(R.id.action_search_to_complicated)
+        }
+        tvHot.setOnClickListener {
+            navController.navigate(R.id.action_search_to_hot)
+        }
+    }
+
     private fun setupSearch() = with(binding.inclSearchSearch) {
+        vm.destination.observe(viewLifecycleOwner) {
+            etWhere.setText(it)
+        }
         vm.departure.observe(viewLifecycleOwner) {
             if (!it.isNullOrEmpty()) {
                 etFrom.setText(it)
             }
         }
+        etFrom.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                vm.saveFromCity(s.toString())
+            }
+        })
         when (vm.mode.value) {
             SearchMode.From -> {
                 etFrom.showKeyboard()
@@ -95,18 +128,18 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
         clPhuket.setOnClickListener {
             binding.inclSearchSearch.etWhere.setText(getString(R.string.phuket))
             navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity("Пхукет")
+            vm.saveToCity(getString(R.string.phuket))
         }
         clSochi.setOnClickListener {
             binding.inclSearchSearch.etWhere.setText(getString(R.string.sochi))
             navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity("Сочи")
+            vm.saveToCity(getString(R.string.sochi))
 
         }
         clIstanbul.setOnClickListener {
             binding.inclSearchSearch.etWhere.setText(getString(R.string.istambul))
             navController.navigate(R.id.action_search_to_search_country)
-            vm.saveToCity("Стамбул")
+            vm.saveToCity(getString(R.string.istambul))
 
         }
     }

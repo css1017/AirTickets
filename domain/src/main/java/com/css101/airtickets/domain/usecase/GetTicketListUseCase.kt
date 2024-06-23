@@ -19,13 +19,13 @@ class GetTicketListUseCase {
                 company = "ius",
                 departure = Departure(
                     town = "dignissim",
-                    date = "option",
-                    airport = "imperdiet"
+                    date = "2024-02-23T03:15:00",
+                    airport = "VKO"
                 ),
                 arrival = Arrival(
                     town = "amet",
-                    date = "vituperata",
-                    airport = "inani"
+                    date = "2024-02-23T07:10:00",
+                    airport = "AER"
                 ),
                 hasTransfer = false,
                 hasVisaTransfer = false,
@@ -42,19 +42,19 @@ class GetTicketListUseCase {
             ),
                 Ticket(
                     id = 9201,
-                    badge = "quaerendum",
+                    badge = null,
                     price = PriceTicket(value = 1888),
                     providerName = "Ollie Warner",
                     company = "consectetur",
                     departure = Departure(
                         town = "noster",
-                        date = "himenaeos",
-                        airport = "lacinia"
+                        date = "024-02-23T15:00:00",
+                        airport = "SVO"
                     ),
                     arrival = Arrival(
                         town = "accumsan",
-                        date = "referrentur",
-                        airport = "fringilla"
+                        date = "024-02-23T18:40:00",
+                        airport = "BUS"
                     ),
                     hasTransfer = false,
                     hasVisaTransfer = false,

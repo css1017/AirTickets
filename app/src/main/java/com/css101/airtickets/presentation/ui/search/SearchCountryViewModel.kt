@@ -8,13 +8,17 @@ import com.css101.airtickets.domain.models.Flight
 import com.css101.airtickets.domain.usecase.GetDepartureUseCase
 import com.css101.airtickets.domain.usecase.GetDestinationUseCase
 import com.css101.airtickets.domain.usecase.GetDirectFlightsUseCase
+import com.css101.airtickets.domain.usecase.SaveDepartureUseCase
+import com.css101.airtickets.domain.usecase.SaveDestinationUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SearchCountryViewModel(
     private val getDestinationUseCase: GetDestinationUseCase,
     private val getDepartureUseCase: GetDepartureUseCase,
-    private val getDirectFlightsUseCase: GetDirectFlightsUseCase
+    private val getDirectFlightsUseCase: GetDirectFlightsUseCase,
+    private val saveDestinationUseCase: SaveDestinationUseCase,
+    private val saveDepartureUseCase: SaveDepartureUseCase
 ) : ViewModel() {
 
     private val _destination = MutableLiveData<String>()
@@ -38,4 +42,10 @@ class SearchCountryViewModel(
         }
     }
 
+    fun setDestination(destination: String?) {
+        saveDestinationUseCase.execute(destination)
+    }
+    fun setDeparture(departure: String?) {
+        saveDepartureUseCase.execute(departure)
+    }
 }

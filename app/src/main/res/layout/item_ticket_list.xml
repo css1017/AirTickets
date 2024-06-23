@@ -76,12 +76,12 @@
             android:id="@+id/tvInfoItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/sf_pro_semibold"
-            tools:text="3.5 ч в пути/Без пересадок"
             android:textColor="?attr/text"
-            app:layout_constraintStart_toEndOf="@+id/tvArrivalItem"
-            app:layout_constraintTop_toTopOf="@+id/tvArrivalItem" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvArrivalItem"
+            tools:text="3.5 ч в пути/Без пересадок" />
 
         <ImageView
             android:id="@+id/ivLogoItem"

@@ -47,4 +47,10 @@
     <string name="from_hint">Откуда - Москва</string>
     <string name="price">%1$s ₽</string>
     <string name="from1">Откуда - Москва</string>
+    <string name="no_transfer">/Без пересадок</string>
+    <string name="in_flight_time">%1$sч в пути</string>
+    <string name="ticket_info">%1$s/%2$s</string>
+    <string name="depatrure_format">%1$s — </string>
+    <string name="difficult">Сложный маршрут</string>
+    <string name="departure_arrival">%1$s – %2$s</string>
 </resources>
