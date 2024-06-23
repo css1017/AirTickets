@@ -1,7 +1,9 @@
 package com.css101.airtickets.domain.usecase
 
-class GetDepartureUseCase {
+import com.css101.airtickets.domain.repository.SearchRepo
+
+class GetDepartureUseCase(private val searchRepo: SearchRepo) {
     fun execute(): String {
-        return "Москва"
+        return searchRepo.getDeparture() ?: ""
     }
 }

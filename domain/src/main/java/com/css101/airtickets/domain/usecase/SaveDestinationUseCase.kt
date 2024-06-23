@@ -1,7 +1,9 @@
 package com.css101.airtickets.domain.usecase
 
-class SaveDestinationUseCase {
+import com.css101.airtickets.domain.repository.SearchRepo
+
+class SaveDestinationUseCase(private val searchRepo: SearchRepo) {
     fun execute(destination: String?) {
-//todo save destination
+        searchRepo.saveDestination(destination)
     }
 }

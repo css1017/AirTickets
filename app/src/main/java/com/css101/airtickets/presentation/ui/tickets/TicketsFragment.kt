@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat.getColor
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.css101.airtickets.R
 import com.css101.airtickets.databinding.FragmentTicketsBinding
 import com.css101.airtickets.domain.models.Music
@@ -95,6 +94,10 @@ class TicketsFragment : Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        vm.updateDeparture()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

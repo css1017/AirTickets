@@ -52,7 +52,7 @@ class SearchTicketListFragment : Fragment() {
             navController.popBackStack()
         }
         vm.getSearchData()
-        tvDirectionList.text = getString(R.string.departure_arrival, vm.departute.value, vm.arrival.value)
+        tvDirectionList.text = getString(R.string.departure_arrival, vm.departure.value, vm.arrival.value)
 //        tvInfoList.text = vm.date
     }
     private fun showEmptyTickets() = with(binding) {

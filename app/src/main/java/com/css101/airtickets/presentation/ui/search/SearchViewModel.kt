@@ -20,10 +20,11 @@ class SearchViewModel(
 
     private val _mode = MutableLiveData<SearchMode>()
     val mode: LiveData<SearchMode> = _mode
+    var isFirstAppearance = true
 
     fun saveMode(mode: SearchMode?) {
         if (mode != null) {
-            _mode.value = mode
+            _mode.value = mode!! //for some reason shows as an error in ide without !!
         }
     }
 
