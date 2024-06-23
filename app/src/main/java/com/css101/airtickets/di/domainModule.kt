@@ -12,7 +12,7 @@ import org.koin.dsl.module
 
 val domainModule = module {
     factory {
-        GetMusicUseCase()
+        GetMusicUseCase(get())
     }
     factory {
         GetDepartureUseCase(get())
@@ -27,10 +27,10 @@ val domainModule = module {
         GetDestinationUseCase(get())
     }
     factory {
-        GetDirectFlightsUseCase()
+        GetDirectFlightsUseCase(get())
     }
     factory {
-        GetTicketListUseCase()
+        GetTicketListUseCase(get())
     }
     factory {
         GetRandomDestinationUseCase()

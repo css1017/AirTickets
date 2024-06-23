@@ -14,8 +14,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SearchCountryViewModel(
-    private val getDestinationUseCase: GetDestinationUseCase,
-    private val getDepartureUseCase: GetDepartureUseCase,
+    getDestinationUseCase: GetDestinationUseCase,
+    getDepartureUseCase: GetDepartureUseCase,
     private val getDirectFlightsUseCase: GetDirectFlightsUseCase,
     private val saveDestinationUseCase: SaveDestinationUseCase,
     private val saveDepartureUseCase: SaveDepartureUseCase

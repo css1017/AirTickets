@@ -34,10 +34,10 @@ data class Arrival(
 
 data class Luggage(
     val hasLuggage: Boolean, //has_luggage
-    val price: Price
+    val price: Price?
 )
 
 data class HandLuggage(
     val hasHandLuggage: Boolean, //has_hand_luggage
-    val size: String
+    val size: String?
 )

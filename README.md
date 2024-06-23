@@ -8,6 +8,7 @@ AirTickets is an Android application designed to simplify the process of searchi
 - [Requirements](#requirements)
 - [Design](#design)
 - [Tech Stack](#techstack)
+- [Installation](#installation)
 
 ## Features
 
@@ -20,8 +21,7 @@ AirTickets is an Android application designed to simplify the process of searchi
 
 ## Design
 
-This project is based on this [Figma Design](https://www.figma.com/design/zGhkmLmNVv8npfnrVdVM7a/AirTickets?node-id=0-1&t=FPpakBumhd3IAToj-1). And made according to this [technical assignment](https://docs.google.com/document/d/1z5z1aJpaA5qj-Hi9yRAKdVZbd1hF806FynjGENAg8fM/edit?usp=sharing)
-
+This project is based on this [Figma Design](https://www.figma.com/design/zGhkmLmNVv8npfnrVdVM7a/AirTickets?node-id=0-1&t=FPpakBumhd3IAToj-1). And made according to this [Technical Assignment](https://docs.google.com/document/d/1z5z1aJpaA5qj-Hi9yRAKdVZbd1hF806FynjGENAg8fM/edit?usp=sharing).
 
 ## TechStack
 
@@ -32,3 +32,7 @@ This project is based on this [Figma Design](https://www.figma.com/design/zGhkmL
 - MVVM
 - LiveData
 - Coroutines
+
+## Installation
+
+Install .apk file from apk folder of this project on your android device.

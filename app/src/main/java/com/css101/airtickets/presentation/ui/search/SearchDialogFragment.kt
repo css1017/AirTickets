@@ -111,9 +111,10 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
             else -> {}
         }
 
-        etWhere.setOnEditorActionListener { _, actionId, _ ->
+        etWhere.setOnEditorActionListener { _, actionId, _ -> //todo need to check whether fields are empty or not
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
                 navController.navigate(R.id.action_search_to_search_country)
+                vm.saveToCity(etWhere.text.toString())
                 true
             } else {
                 false
