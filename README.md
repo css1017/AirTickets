@@ -12,7 +12,7 @@ Notice that this assignment didn't require completing all functions of an app.
 - [Design](#design)
 - [Tech Stack](#techstack)
 - [Installation](#installation)
-- Warnings(#warnings)
+- [Warnings](#warnings)
 
 ## Features
 
