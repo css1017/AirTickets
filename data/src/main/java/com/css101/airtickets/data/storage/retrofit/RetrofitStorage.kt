@@ -7,15 +7,27 @@ import com.css101.airtickets.data.storage.TicketStorage
 
 class RetrofitStorage : TicketStorage {
     override suspend fun getMusic(): MusicData {
-        return RetrofitInstance.ticketService.getMusic()
+        return try {
+            RetrofitInstance.ticketService.getMusic()
+        } catch (e: Exception) {
+            MusicData(emptyList())
+        }
     }
 
     override suspend fun getTicketList(): TicketData {
-        return RetrofitInstance.ticketService.getTicketList()
+        return try {
+            RetrofitInstance.ticketService.getTicketList()
+        }catch (e: Exception) {
+            TicketData(emptyList())
+        }
     }
 
     override suspend fun getDirectFlights(): FlightData {
-        return RetrofitInstance.ticketService.getDirectFlights()
+        return try {
+            RetrofitInstance.ticketService.getDirectFlights()
+        }catch (e: Exception) {
+            FlightData(emptyList())
+        }
 
     }
 
