@@ -11,7 +11,7 @@ object RetrofitInstance {
     }
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://run.mocky.io/v3/")
+            .baseUrl("https://raw.githubusercontent.com/css1017/AirTickets/master/api/")
             .addConverterFactory(JacksonConverterFactory.create(objectMapper))
             .build()
     }

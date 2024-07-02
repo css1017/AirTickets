@@ -48,15 +48,20 @@ class SearchCountryFragment : Fragment() {
     }
 
     private fun setupDirect(directData: List<Flight>) = with(binding.inclDirectCountry) {
-        tvTimeDirect1.text = directData[0].timeRange.joinToString(separator = " ")
-        tvPriceDirect1.text = getString(R.string.price, directData[0].price.value.formatPrice())
-        tvCompanyNameDirect.text = directData[0].title
-        tvTimeDirect2.text = directData[1].timeRange.joinToString(separator = " ")
-        tvPriceDirect2.text = getString(R.string.price, directData[1].price.value.formatPrice())
-        tvCompanyNameDirect2.text = directData[1].title
-        tvTimeDirect3.text = directData[2].timeRange.joinToString(separator = " ")
-        tvPriceDirect3.text = getString(R.string.price, directData[2].price.value.formatPrice())
-        tvCompanyNameDirect3.text = directData[2].title
+        if (directData.isEmpty()){
+            binding.inclDirectCountry.root.visibility = View.GONE
+        } else {
+            binding.inclDirectCountry.root.visibility = View.VISIBLE
+            tvTimeDirect1.text = directData[0].timeRange.joinToString(separator = " ")
+            tvPriceDirect1.text = getString(R.string.price, directData[0].price.value.formatPrice())
+            tvCompanyNameDirect.text = directData[0].title
+            tvTimeDirect2.text = directData[1].timeRange.joinToString(separator = " ")
+            tvPriceDirect2.text = getString(R.string.price, directData[1].price.value.formatPrice())
+            tvCompanyNameDirect2.text = directData[1].title
+            tvTimeDirect3.text = directData[2].timeRange.joinToString(separator = " ")
+            tvPriceDirect3.text = getString(R.string.price, directData[2].price.value.formatPrice())
+            tvCompanyNameDirect3.text = directData[2].title
+        }
     }
 
     private fun setupSearchTools() = with(binding.inclSearchToolsCountry) {
