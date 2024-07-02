@@ -1,6 +1,5 @@
 package com.css101.airtickets.data.storage.retrofit
 
-import android.util.Log
 import com.css101.airtickets.data.models.FlightData
 import com.css101.airtickets.data.models.MusicData
 import com.css101.airtickets.data.models.TicketData
@@ -19,7 +18,6 @@ class RetrofitStorage : TicketStorage {
         return try {
             RetrofitInstance.ticketService.getTicketList()
         }catch (e: Exception) {
-            Log.e("RetrofitStorage", e.toString())
             TicketData(emptyList())
         }
     }
@@ -28,8 +26,6 @@ class RetrofitStorage : TicketStorage {
         return try {
             RetrofitInstance.ticketService.getDirectFlights()
         }catch (e: Exception) {
-            Log.e("RetrofitStorage", e.toString())
-
             FlightData(emptyList())
         }
 
